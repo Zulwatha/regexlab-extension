@@ -1,0 +1,20 @@
+{
+    "name": "RegexLab",
+    "version": "1.0",
+    "manifest_version": 3,
+    "description": "Inject a regex debugger into any page",
+    "permissions": ["scripting", "activeTab"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_icon": "assets/icons/icon16.png"
+    },
+    "web_accessible_resources": [
+      {
+        "resources": ["panel.html", "panel.js", "panel.css"],
+        "matches": ["<all_urls>"]
+      }
+    ]
+  }
+  

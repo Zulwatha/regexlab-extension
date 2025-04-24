@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<div id="regexlab-container">
+  <div id="regexlab-panel">
+
+    <!-- Close button: move here -->
+    <button id="regexlab-close" title="Close">×</button>
+    <!-- === TAB HEADER === -->
+    <div class="regexlab-tabs">
+      <button class="regexlab-tab active" data-tab="editor">Editor</button>
+      <button class="regexlab-tab" data-tab="library">Library</button>
+      <button class="regexlab-tab" data-tab="output">Output</button>
+      <button class="regexlab-tab" data-tab="settings">Settings</button>
+      <button class="regexlab-tab" data-tab="help">Help</button>
+    </div>
+    <!-- === TAB CONTENTS === -->
+    <div class="regexlab-tab-content active" id="tab-editor">
+      <h2>RegexLab Browser Extension</h2>
+
+      <div id="regexlab-source-selector" style="margin-bottom: 8px;">
+        <label><input type="radio" name="pattern-source" value="default" checked /> Default</label>
+        <label style="margin-left: 10px;"><input type="radio" name="pattern-source" value="custom" /> Custom</label>
+      </div>
+
+      <label for="regexlab-defaults">🎯 Patterns:</label>
+      <select id="regexlab-defaults">
+        <option value="">-- Select a pattern --</option>
+      </select>
+
+      <label for="regexlab-defaults">🔍 Or write your own regex pattern:</label>
+      <input id="regexlab-input" type="text" placeholder="Write your regex..." />
+
+      <div>
+        <button id="regexlab-highlight">Highlight Matches</button>
+        <button id="regexlab-save-pattern">💾 Save Pattern</button>
+      </div>
+
+      <div id="regexlab-results">Ready.</div>
+    </div>
+
+    <!-- Tab: Library -->
+    <div class="regexlab-tab-content" id="tab-library">
+      <div style="display: flex; gap: 20px;">
+        <!-- Left side: Form -->
+        <div style="flex: 1;">
+          <input id="pattern-title" type="text" placeholder="Pattern Title" />
+          <input id="pattern-desc" type="text" placeholder="Short Description" />
+          <input id="pattern-tags" type="text" placeholder="Comma-separated Tags" />
+          <input id="pattern-value" type="text" placeholder="Regex Pattern" />
+          <div style="margin-top: 8px;">
+            <button id="pattern-save">💾 Save</button>
+            <button id="pattern-update">🔁 Update</button>
+            <button id="pattern-delete">🗑 Delete</button>
+          </div>
+        </div>
+
+        <!-- Right side: List -->
+        <div style="flex: 1;">
+          <h4 style="margin-bottom: 6px;">📚 Saved Patterns</h4>
+          <ul id="pattern-list"
+            style="padding-left: 0; list-style: none; border: 1px solid #333; max-height: 250px; overflow-y: auto; background: #252526;">
+            <!-- <li>Pattern Title</li> -->
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Tab: Output -->
+    <div class="regexlab-tab-content" id="tab-output">
+
+      <!-- 🔼 Export Dropdown Üste Alındı -->
+      <details id="regexlab-export-dropdown" style="margin-bottom: 10px;">
+        <summary style="cursor: pointer;">📦 Export</summary>
+        <div style="margin-top: 6px;">
+          <button id="regexlab-copy">📋 Copy</button>
+          <button id="regexlab-export-txt">⬇ TXT</button>
+          <button id="regexlab-export-json">⬇ JSON</button>
+        </div>
+      </details>
+
+      <!-- ✅ Output verileri -->
+      <div id="regexlab-results">Ready.</div>
+      <div id="regexlab-match-list" style="display: none;"></div>
+    </div>
+
+
+
+    <!-- Tab: Settings -->
+    <div class="regexlab-tab-content" id="tab-settings">
+      <!-- SETTINGS PANEL START -->
+      <div class="regexlab-settings-section">
+
+        <!-- Match Options -->
+        <h3>🔧 Match Options</h3>
+        <label><input type="checkbox" id="setting-case" /> Case Sensitive Match</label><br>
+        <label><input type="checkbox" id="setting-global" checked /> Global Match (g flag)</label><br>
+        <label><input type="checkbox" id="setting-multiline" /> Multiline (m flag)</label>
+
+      </div>
+
+      <hr style="margin: 12px 0; border-color: #444;" />
+
+      <div class="regexlab-settings-section">
+
+        <!-- Highlight Style -->
+        <h3>🎨 Highlight Style</h3>
+        <label for="setting-highlight-color">Highlight Color:</label>
+        <input type="color" id="setting-highlight-color" value="#264f78" /><br><br>
+
+        <label><input type="checkbox" id="setting-bold" checked /> Bold</label><br>
+        <label><input type="checkbox" id="setting-italic" /> Italic</label>
+
+      </div>
+
+      <hr style="margin: 12px 0; border-color: #444;" />
+
+      <div class="regexlab-settings-section">
+
+        <!-- Storage -->
+        <h3>📦 Data & Storage</h3>
+        <button id="setting-clear-storage">🧹 Clear All Saved Patterns</button>
+        <button id="setting-export-storage">⬇ Export Patterns</button>
+
+      </div>
+
+      <!-- SETTINGS PANEL END -->
+    </div>
+
+    <!-- HELP & INFO -->
+
+    <div class="regexlab-tab-content" id="tab-help">
+      <h3>🆘 Help & Info</h3>
+
+      <p><b>What is RegexLab?</b></p>
+      <p>RegexLab is a browser-based tool for writing, testing, and debugging regular expressions directly on any
+        webpage.</p>
+
+      <p><b>How to use it:</b></p>
+      <ul style="margin-left: 16px; color: #bbb; font-size: 13px;">
+        <li>🧪 Write a regex pattern in the input field under the Editor tab.</li>
+        <li>🎯 Choose from Default or Custom patterns via the selector.</li>
+        <li>💡 Click <b>RUN</b> to highlight matches on the current page.</li>
+        <li>📋 Use the Output tab to export or copy the results.</li>
+        <li>📚 Manage and save your custom patterns in the Library tab.</li>
+        <li>⚙️ Customize your experience in the Settings tab.</li>
+      </ul>
+
+      <p><b>Version:</b> RegexLab v1.0.0 BETA – April 2025</p>
+      <p><b>Developer:</b> <a href="https://github.com/Zulwatha" target="_blank">@github</a></p>
+    </div>
+
+    <div id="regexlab-footer">
+      RegexLab v1.0 by <a href="https://github.com/Zulwatha" target="_blank">@github</a>
+    </div>
+
+
+    <!-- Script must be at the end -->
+    <script src="panel.js"></script>
+  </div>
+
+</html>
+<script>
+  const closeButton = document.getElementById('regexlab-close');
+  const inputField = document.getElementById('regexlab-input');
+  const highlightButton = document.getElementById('regexlab-highlight');
+  const resultsDiv = document.getElementById('regexlab-results');
+
+  closeButton.addEventListener('click', () => {
+    window.close();
+  });
+
+  highlightButton.addEventListener('click', () => {
+    const regexPattern = inputField.value;
+    if (regexPattern) {
+      chrome.runtime.sendMessage({ action: 'highlightMatches', pattern: regexPattern });
+    } else {
+      resultsDiv.textContent = 'Please enter a valid regex pattern.';
+    }
+  });
