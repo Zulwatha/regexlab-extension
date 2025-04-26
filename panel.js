@@ -1,6 +1,5 @@
 console.log('RegexLab panel script loaded.');
 init();
-// panel.js başında:
 window.window.regexMatches = [];
 
 
@@ -143,7 +142,7 @@ function removeHighlights() {
 function highlightTextNode(node, regex, matchCountRef) {
   const text = node.textContent;
 
-  // All matches (index dahil)
+  // All matches
   const matches = [...text.matchAll(regex)];
   if (matches.length === 0) return;
 
@@ -352,7 +351,7 @@ document.getElementById('setting-clear-storage').addEventListener('click', () =>
   if (!confirm("Are you sure you want to clear all custom saved patterns?")) return;
   localStorage.removeItem('regexlab_custom_patterns');
   alert("All saved patterns have been deleted.");
-  loadCustomPatternList?.(); // varsa listeyi tazele
+  loadCustomPatternList?.(); 
 });
 
 document.getElementById('setting-export-storage').addEventListener('click', () => {
