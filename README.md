@@ -3,6 +3,12 @@
 RegexLab is a professional-grade browser extension for testing and debugging regular expressions directly on any webpage.  
 Designed with a clean interface, tab-based workflow, and exportable results – it brings the power of regex tools into your browser.
 
+## 🛒 Now Available on Chrome Web Store!
+
+👉 [**RegexLab – Real-time Regex Tester & Highlighter**](https://chromewebstore.google.com/detail/regexlab-%E2%80%93-real-time-rege/jmkdpjcpcimhblcbpimjcifegnhcloic?hl=en-GB&authuser=0)
+
+Bring the power of real-time regex testing into your browser – directly from the Chrome Web Store.
+
 ---
 
 ## 🚀 Features
